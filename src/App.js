@@ -1,24 +1,36 @@
-import logo from './logo.svg';
 import './App.css';
+import { useState, useEffect } from 'react';
+import ReactHlsPlayer from 'react-hls-player/dist';
+import ReactHtmlParser from "react-html-parser";
 
 function App() {
+  const [ post, setPost ] = useState({});
+
+  async function getPost() {
+    const res = await fetch('https://reddit-random-middleware.herokuapp.com/memes');
+    const resJ = await res.json();
+    setPost(resJ);
+    console.log(resJ)
+  }
+
+  useEffect(() => {
+    getPost();
+  },[setPost])
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      {post.title}
+      <br />
+      {post.media && post.media.reddit_video && <ReactHlsPlayer
+        src={post.media.reddit_video.hls_url}
+        autoPlay={false}
+        controls={true}
+        width="100%"
+        height="auto"
+      />}
+      {post.media && post.media.oembed && ReactHtmlParser(ReactHtmlParser(post.media.oembed.html))}
+      {!post.media && /\.(jpg|jpeg|png|webp|avif|gif|svg)$/.test(post.url) && <img src={post.url} />}
+    </>
   );
 }
 
