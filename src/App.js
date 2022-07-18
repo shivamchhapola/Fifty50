@@ -2,20 +2,22 @@ import './App.css';
 import { useState, useEffect } from 'react';
 import ReactHlsPlayer from 'react-hls-player/dist';
 import ReactHtmlParser from "react-html-parser";
+import { useParams } from "react-router-dom";
 
 function App() {
+  let params = useParams();
   const [ post, setPost ] = useState({});
 
-  async function getPost() {
-    const res = await fetch('https://reddit-random-middleware.herokuapp.com/memes');
+  async function getPost(sub) {
+    const res = await fetch(sub ? 'https://reddit-random-middleware.herokuapp.com/' + sub : 'https://reddit-random-middleware.herokuapp.com/fiftyfifty');
     const resJ = await res.json();
     setPost(resJ);
     console.log(resJ)
   }
 
   useEffect(() => {
-    getPost();
-  },[setPost])
+    getPost(params.sub);
+  },[setPost, params])
   
   return (
     <>
@@ -29,7 +31,8 @@ function App() {
         height="auto"
       />}
       {post.media && post.media.oembed && ReactHtmlParser(ReactHtmlParser(post.media.oembed.html))}
-      {!post.media && /\.(jpg|jpeg|png|webp|avif|gif|svg)$/.test(post.url) && <img src={post.url} alt={post.title}/>}
+      {!post.media && /\.(jpg|jpeg|png|webp|avif|gif|svg)$/.test(post.url) && <img src={post.url} alt={post.title} />}
+      <button onClick={() => getPost()}> Another One </button> 
     </>
   );
 }
