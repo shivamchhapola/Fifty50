@@ -2,19 +2,13 @@ import './Main.css';
 import { useState, useEffect } from 'react';
 import ReactHlsPlayer from 'react-hls-player/dist';
 import ReactHtmlParser from "react-html-parser";
+import { GetPost } from './GetPost.ts';
 
 function Eyebleach() {
   const [ post, setPost ] = useState({});
 
-  async function getPost() {
-    const res = await fetch('https://reddit-random-middleware.herokuapp.com/eyebleach');
-    let resJ = await res.json();
-    resJ.url = resJ.url.replace("gifv", "gif");
-    setPost(resJ);
-  }
-
   useEffect(() => {
-    getPost();
+    GetPost('eyebleach', setPost);
   },[setPost])
 
   return (
@@ -36,15 +30,19 @@ function Eyebleach() {
       </div>
       <div className="nav">
         <button onClick={() => {
-          getPost();
+          GetPost('eyebleach', setPost);
           setPost({});
-        }} style={{backgroundColor: "#E79CFA"}}> Another One? </button>
+        }} style={{ backgroundColor: "#E79CFA" }}> Another One?
+        </button>
+
         <button onClick={() => {
-          window.open("/memes", "_self");
+          window.open("/50-50-challenge/memes", "_self");
           setPost({});
-        }} style={{backgroundColor: "#A2DCFD"}}> Memes! </button>
+        }} style={{ backgroundColor: "#A2DCFD" }}> Memes!
+        </button>
+        
         <button onClick={() => {
-          window.open("/", "_self");
+          window.open("/50-50-challenge/", "_self");
           setPost({});
         }} style={{backgroundColor: "#FC777F"}}> 50/50 Challenge! </button>
       </div>

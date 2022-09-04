@@ -3,22 +3,15 @@ import { useState, useEffect } from 'react';
 import ReactHlsPlayer from 'react-hls-player/dist';
 import ReactHtmlParser from "react-html-parser";
 import { useParams } from "react-router-dom";
+import { GetPost } from './GetPost.ts';
 
 function Sub() {
-  let params = useParams();
+  let param = useParams();
   const [ post, setPost ] = useState({});
 
-  async function getPost(sub) {
-    const res = await fetch(sub ? 'https://reddit-random-middleware.herokuapp.com/' + sub : 'https://reddit-random-middleware.herokuapp.com/memes');
-    let resJ = await res.json();
-    resJ.url = resJ.url.replace("gifv", "gif");
-    console.log(resJ);
-    setPost(resJ);
-  }
-
   useEffect(() => {
-    getPost(params.sub);
-  },[setPost, params])
+    GetPost(param.sub, setPost);
+  },[setPost, param])
 
   return (
     <div className="main">
@@ -39,15 +32,19 @@ function Sub() {
       </div>
       <div className="nav">
         <button onClick={() => {
-          getPost(params.sub);
+          GetPost(param.sub, setPost);
           setPost({});
-        }} style={{backgroundColor: "#97F388"}}> Another One? </button>
+        }} style={{ backgroundColor: "#97F388" }}> Another One?
+        </button>
+
         <button onClick={() => {
-          window.open("/eyebleach", "_self");
+          window.open("/50-50-challenge/eyebleach", "_self");
           setPost({});
-        }} style={{backgroundColor: "#E79CFA"}}> Clean my eyes! </button>
+        }} style={{ backgroundColor: "#E79CFA" }}> Clean my eyes!
+        </button>
+
         <button onClick={() => {
-          window.open("/memes", "_self");
+          window.open("/50-50-challenge/memes", "_self");
           setPost({});
         }} style={{backgroundColor: "#A2DCFD"}}> Memes! </button>
       </div>
