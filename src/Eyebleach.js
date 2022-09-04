@@ -36,13 +36,13 @@ function Eyebleach() {
         </button>
 
         <button onClick={() => {
-          window.open("/50-50-challenge/memes", "_self");
+          window.open("/memes", "_self");
           setPost({});
         }} style={{ backgroundColor: "#A2DCFD" }}> Memes!
         </button>
         
         <button onClick={() => {
-          window.open("/50-50-challenge/", "_self");
+          window.open("/", "_self");
           setPost({});
         }} style={{backgroundColor: "#FC777F"}}> 50/50 Challenge! </button>
       </div>

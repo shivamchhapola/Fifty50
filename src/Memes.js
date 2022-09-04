@@ -36,13 +36,13 @@ function Memes() {
         </button>
 
         <button onClick={() => {
-          window.open("/50-50-challenge/", "_self");
+          window.open("/", "_self");
           setPost({});
         }} style={{ backgroundColor: "#FC777F" }}> 50/50 Challenge!
         </button>
         
         <button onClick={() => {
-          window.open("/50-50-challenge/eyebleach", "_self");
+          window.open("/eyebleach", "_self");
           setPost({});
         }} style={{backgroundColor: "#E79CFA"}}> Clean my eyes! </button>
       </div>

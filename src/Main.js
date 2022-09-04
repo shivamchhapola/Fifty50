@@ -36,13 +36,13 @@ function Main() {
         </button>
 
         <button onClick={() => {
-          window.open("/50-50-challenge/eyebleach", "_self");
+          window.open("/eyebleach", "_self");
           setPost({});
         }} style={{ backgroundColor: "#E79CFA" }}> Clean my eyes!
         </button>
 
         <button onClick={() => {
-          window.open("/50-50-challenge/memes", "_self");
+          window.open("/memes", "_self");
           setPost({});
         }} style={{ backgroundColor: "#A2DCFD" }}> Memes!
         </button>
