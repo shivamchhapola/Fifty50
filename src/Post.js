@@ -3,7 +3,7 @@ import ReactHtmlParser from "react-html-parser"
 import React from 'react'
 import './Post.css'
 
-export default function Post(post) {
+export default function Post({post}) {
   return (
     <div className="content">
         {post.media && post.media.reddit_video && <ReactHlsPlayer
