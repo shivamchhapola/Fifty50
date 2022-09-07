@@ -1,5 +1,7 @@
 import React from 'react'
 import './Post.css'
+import ReactHlsPlayer from 'react-hls-player/dist';
+import ReactHtmlParser from "react-html-parser";
 
 export default function Post(post) {
   return (
