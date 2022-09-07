@@ -43,9 +43,10 @@ h2 {
 }
 
 .imgBtn {
+  display: block;
   border: 0;
   background: none;
-  align-content: center;
+  text-align: center;
   padding: 0;
   margin: 0;
 }
