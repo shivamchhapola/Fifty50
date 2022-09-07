@@ -41,3 +41,11 @@ h2 {
 .blur {
   filter: blur(1rem);
 }
+
+.imgBtn {
+  border: 0;
+  background: none;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}

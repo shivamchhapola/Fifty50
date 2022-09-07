@@ -17,7 +17,7 @@ function Main() {
 
       <button onClick={() => {
         setVisible(true);
-      }}>
+      }} className="imgBtn">
         <Post post={post} blur={!visible} />
       </button>
 
