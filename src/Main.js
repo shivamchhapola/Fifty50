@@ -15,7 +15,7 @@ function Main() {
   return (
     <div className="main">
       <h2>{post.title}</h2>
-      <Post post={this.post}/>
+      <Post post={post}/>
       <div className="nav">
         <button onClick={() => {
           GetPost('memes', setPost);
