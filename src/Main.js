@@ -4,20 +4,28 @@ import { GetPost } from './GetPost.ts';
 import Post from './Post';
 
 function Main() {
-  const [ post, setPost ] = useState({});
+  const [post, setPost] = useState({});
+  const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    GetPost('memes', setPost);
+    GetPost('fiftyfifty', setPost);
   },[setPost])
 
   return (
     <div className="main">
       <h2>{post.title}</h2>
-      <Post post={post}/>
+
+      <button onClick={() => {
+        setVisible(true);
+      }}>
+        <Post post={post} blur={!visible} />
+      </button>
+
       <div className="nav">
         <button onClick={() => {
-          GetPost('memes', setPost);
+          GetPost('fiftyfifty', setPost);
           setPost({});
+          setVisible(false);
         }} style={{ backgroundColor: "#97F388" }}> Another One?
         </button>
 

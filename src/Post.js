@@ -3,7 +3,7 @@ import ReactHtmlParser from "react-html-parser"
 import React from 'react'
 import './Post.css'
 
-export default function Post({post}) {
+export default function Post({post, blur}) {
   return (
     <div className="content">
         {post.media && post.media.reddit_video && <ReactHlsPlayer
@@ -14,7 +14,7 @@ export default function Post({post}) {
             height="100%"
         />}
         {post.media && post.media.oembed && ReactHtmlParser(ReactHtmlParser(post.media.oembed.html))}
-        {!post.media && /\.(jpg|jpeg|png|webp|avif|gif|svg)$/.test(post.url) && <img src={post.url} alt={post.title}/>}
+      {!post.media && /\.(jpg|jpeg|png|webp|avif|gif|svg)$/.test(post.url) && ((blur && <img src={post.url} alt={post.title} style={{filter: "blur(2rem)"}}/>) || <img src={post.url} alt={post.title}/>)}
         <a href={"https://www.reddit.com/u/" + post.author} target="_blank" rel="noopener noreferrer">
         <span className="author">u/{post.author}</span>
         </a>

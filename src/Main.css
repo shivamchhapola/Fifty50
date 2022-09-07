@@ -37,3 +37,7 @@ h2 {
 .nav > button:hover {
   text-decoration: underline;
 }
+
+.blur {
+  filter: blur(1rem);
+}
