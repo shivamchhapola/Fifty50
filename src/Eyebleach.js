@@ -1,7 +1,5 @@
 import './Main.css';
 import { useState, useEffect } from 'react';
-import ReactHlsPlayer from 'react-hls-player/dist';
-import ReactHtmlParser from "react-html-parser";
 import { GetPost } from './GetPost.ts';
 import Post from './Post';
 
@@ -15,7 +13,7 @@ function Eyebleach() {
   return (
     <div className="main">
       <h2>{post.title}</h2>
-      <Post post={this.post} />
+      <Post post={post} />
       <div className="nav">
         <button onClick={() => {
           GetPost('eyebleach', setPost);

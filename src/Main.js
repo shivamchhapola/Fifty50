@@ -1,8 +1,6 @@
 import './Main.css';
 import { useState, useEffect } from 'react';
 import { GetPost } from './GetPost.ts';
-import ReactHlsPlayer from "react-hls-player/dist"
-import ReactHtmlParser from "react-html-parser"
 import Post from './Post';
 
 function Main() {
