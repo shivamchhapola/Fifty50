@@ -25,10 +25,10 @@
 
 @media only screen and (max-width: 600px) {
   .content img {
-    max-height: 95%;
+    max-height: 98%;
   }
 
   .content iframe {
-    max-height: 95%;
+    max-height: 98%;
   }
 }
