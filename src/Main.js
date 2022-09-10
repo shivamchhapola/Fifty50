@@ -10,35 +10,50 @@ function Main() {
 
   useEffect(() => {
     GetPost('memes', setPost);
-  },[setPost, setVisible])
+  }, [setPost, setVisible]);
 
   return (
     <div className="main">
       <h2>{post.title}</h2>
 
-      <Post post={post} Blur={!visible}/>
+      <Post post={post} Blur={!visible} />
 
       <div className="nav">
-        <button onClick={() => {
-          GetPost('memes', setPost);
-          setPost({});
-          setVisible(false);
-        }} style={{ backgroundColor: "#97F388" }}> Another One?
+        <button
+          onClick={() => {
+            GetPost('memes', setPost);
+            setPost({});
+            setVisible(false);
+          }}
+          style={{ backgroundColor: '#97F388' }}
+        >
+          {' '}
+          Another One?
         </button>
 
-        <button onClick={() => {
-          window.open("/eyebleach", "_self");
-          setPost({});
-        }} style={{ backgroundColor: "#E79CFA" }}> Clean my eyes!
+        <button
+          onClick={() => {
+            window.open('/eyebleach', '_self');
+            setPost({});
+          }}
+          style={{ backgroundColor: '#E79CFA' }}
+        >
+          {' '}
+          Clean my eyes!
         </button>
 
-        <button onClick={() => {
-          window.open("/memes", "_self");
-          setPost({});
-        }} style={{ backgroundColor: "#A2DCFD" }}> Memes!
+        <button
+          onClick={() => {
+            window.open('/memes', '_self');
+            setPost({});
+          }}
+          style={{ backgroundColor: '#A2DCFD' }}
+        >
+          {' '}
+          Memes!
         </button>
       </div>
-      <Footer/>
+      <Footer />
     </div>
   );
 }
