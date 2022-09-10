@@ -8,7 +8,7 @@ function Main() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    GetPost('fiftyfifty', setPost);
+    GetPost('memes', setPost);
   },[setPost])
 
   return (
@@ -23,7 +23,7 @@ function Main() {
 
       <div className="nav">
         <button onClick={() => {
-          GetPost('fiftyfifty', setPost);
+          GetPost('memes', setPost);
           setPost({});
           setVisible(false);
         }} style={{ backgroundColor: "#97F388" }}> Another One?
