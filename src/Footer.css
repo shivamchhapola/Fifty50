@@ -1,0 +1,9 @@
+.footer {
+  position: absolute;
+  bottom: 0;
+}
+
+.footer > a {
+  color: aliceblue;
+  text-decoration: none;
+}

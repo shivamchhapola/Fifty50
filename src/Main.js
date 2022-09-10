@@ -2,6 +2,7 @@ import './Main.css';
 import { useState, useEffect } from 'react';
 import { GetPost } from './GetPost.ts';
 import Post from './Post';
+import Footer from './Footer';
 
 function Main() {
   const [post, setPost] = useState({});
@@ -37,6 +38,7 @@ function Main() {
         }} style={{ backgroundColor: "#A2DCFD" }}> Memes!
         </button>
       </div>
+      <Footer/>
     </div>
   );
 }

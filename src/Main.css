@@ -29,7 +29,7 @@ h2 {
   margin-right: 0.5rem;
   border-radius: 0.3rem;
   font-weight: bold;
-  padding: 0.35rem 1rem 0.35rem 1rem;
+  padding: 0.35rem 1.3rem 0.35rem 1.3rem;
   border: 0;
   font-size: small;
 }
@@ -40,13 +40,4 @@ h2 {
 
 .blur {
   filter: blur(1rem);
-}
-
-.imgBtn {
-  display: block;
-  border: 0;
-  background: none;
-  text-align: center;
-  padding: 0;
-  margin: 0;
 }
