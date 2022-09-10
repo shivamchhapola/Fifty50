@@ -5,20 +5,17 @@ import Post from './Post';
 
 function Main() {
   const [post, setPost] = useState({});
+  const [visible, setVisible] = useState(false);
 
   useEffect(() => {
     GetPost('memes', setPost);
-  },[setPost])
+  },[setPost, setVisible])
 
   return (
     <div className="main">
       <h2>{post.title}</h2>
 
-      <button onClick={() => {
-        setVisible(true);
-      }} className="imgBtn">
-        <Post post={post} Blur={true} />
-      </button>
+      <Post post={post} Blur={!visible}/>
 
       <div className="nav">
         <button onClick={() => {
