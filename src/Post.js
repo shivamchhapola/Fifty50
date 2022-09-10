@@ -1,9 +1,15 @@
 import ReactHlsPlayer from "react-hls-player/dist"
 import ReactHtmlParser from "react-html-parser"
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import './Post.css'
 
-export default function Post({post, blur}) {
+export default function Post({post, Blur}) {
+  const [blur, setBlur] = UseState(false);
+
+  useEffect(() => {
+    setBlur(Blur);
+  }, [blur])
+
   return (
     <div className="content">
 

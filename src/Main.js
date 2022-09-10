@@ -5,7 +5,6 @@ import Post from './Post';
 
 function Main() {
   const [post, setPost] = useState({});
-  const [visible, setVisible] = useState(false);
 
   useEffect(() => {
     GetPost('memes', setPost);
@@ -18,7 +17,7 @@ function Main() {
       <button onClick={() => {
         setVisible(true);
       }} className="imgBtn">
-        <Post post={post} blur={!visible} />
+        <Post post={post} Blur={true} />
       </button>
 
       <div className="nav">
