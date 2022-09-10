@@ -12,9 +12,9 @@ root.render(
   <BrowserRouter>
     <Routes>
       <Route path="/" element={<Main />} exact />
-        <Route path="/Memes" element={<Memes />}/>
-        <Route path="/Eyebleach" element={<Eyebleach />}/>
-        <Route path="/:sub" element={<Sub />}/>
-  </Routes>
+      <Route path="/Memes" element={<Memes />} />
+      <Route path="/Eyebleach" element={<Eyebleach />} />
+      <Route path="/:sub" element={<Sub />} />
+    </Routes>
   </BrowserRouter>
 );

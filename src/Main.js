@@ -9,7 +9,7 @@ function Main() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    GetPost('memes', setPost);
+    GetPost('fiftyfifty', setPost);
   }, [setPost, setVisible]);
 
   return (
@@ -21,7 +21,7 @@ function Main() {
       <div className="nav">
         <button
           onClick={() => {
-            GetPost('memes', setPost);
+            GetPost('fiftyfifty', setPost);
             setPost({});
             setVisible(false);
           }}
