@@ -6,4 +6,5 @@
 .footer > a {
   color: aliceblue;
   text-decoration: none;
+  font-size: smaller;
 }
